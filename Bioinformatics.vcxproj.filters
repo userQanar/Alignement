@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fenster">
+      <UniqueIdentifier>{e6cbcb5a-4ccb-42ed-922a-c7a436df09cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generierte Dateien">
+      <UniqueIdentifier>{81dd355a-fafb-4913-a672-5fdd0fd9688a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Alignment">
+      <UniqueIdentifier>{0f94dccb-c653-4ed6-928e-4d660d131b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Alignment">
+      <UniqueIdentifier>{d6e9df51-976a-463d-9bed-0c139e849121}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ui_mainwindow.h">
+      <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Fasta.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="NeedlemanWunsch.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="NeedlemanWunschAffin.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="SmithWaterman.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="SmithWatermanAffin.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseAlignment.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="AlignedData.h">
+      <Filter>Headerdateien\Alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="AlignedDataPrinter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Dotplot.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DotplotPrinter.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="moc_mainwindow.cpp">
+      <Filter>Generierte Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Fasta.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="NeedlemanWunsch.cpp">
+      <Filter>Quelldateien\Alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="NeedlemanWunschAffin.cpp">
+      <Filter>Quelldateien\Alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="SmithWaterman.cpp">
+      <Filter>Quelldateien\Alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="SmithWatermanAffin.cpp">
+      <Filter>Quelldateien\Alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="AlignedDataPrinter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Dotplot.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DotplotPrinter.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <Filter>Fenster</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MainWindow.h">
+      <Filter>Headerdateien</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

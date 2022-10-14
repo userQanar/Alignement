@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{C45CA19A-9ECA-48D3-8959-A9B951A0D31F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PatientenakteWinML</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Bioinformatics</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.;.\Qt\5.12.1\msvc2017_64\include;.\Qt\5.12.1\msvc2017_64\include\QtWidgets;.\Qt\5.12.1\msvc2017_64\include\QtGui;.\Qt\5.12.1\msvc2017_64\include\QtANGLE;.\Qt\5.12.1\msvc2017_64\include\QtCore;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251;26439;26451;26495;26498;26812;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>.\Qt\5.12.1\msvc2017_64\lib\qtmaind.lib;.\Qt/5.12.1/msvc2017_64/lib\Qt5Cored.lib;.\Qt\5.12.1\msvc2017_64\lib\Qt5Widgetsd.lib;.\Qt\5.12.1\msvc2017_64\lib\Qt5Guid.lib;.\Qt\5.12.1\msvc2017_64\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="MainWindow.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+.\Qt\5.12.1\msvc2017_64\bin\moc.exe  -DUNICODE -DWIN32 -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -D_WIN64 -I./Qt/5.12.1/msvc2017_64/mkspecs/win32-msvc2013 -ID:/Local/Projekte/MedImageViewer -I./Qt/5.12.1/msvc2017_64/include -I./Qt/5.12.1/msvc2017_64/include/QtWidgets -I./Qt/5.12.1/msvc2017_64/include/QtGui -I./Qt/5.12.1/msvc2017_64/include/QtANGLE -I./Qt/5.12.1/msvc2017_64/include/QtCore mainwindow.h -o moc_mainwindow.cpp
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC MainWindow.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">moc_mainwindow.cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="AlignedData.h" />
+    <ClInclude Include="AlignedDataPrinter.h" />
+    <ClInclude Include="BaseAlignment.h" />
+    <ClInclude Include="Dotplot.h" />
+    <ClInclude Include="DotplotPrinter.h" />
+    <ClInclude Include="Fasta.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="NeedlemanWunsch.h" />
+    <ClInclude Include="NeedlemanWunschAffin.h" />
+    <ClInclude Include="SmithWaterman.h" />
+    <ClInclude Include="SmithWatermanAffin.h" />
+    <ClInclude Include="ui_mainwindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AlignedDataPrinter.cpp" />
+    <ClCompile Include="Dotplot.cpp" />
+    <ClCompile Include="DotplotPrinter.cpp" />
+    <ClCompile Include="Fasta.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="moc_mainwindow.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NeedlemanWunsch.cpp" />
+    <ClCompile Include="NeedlemanWunschAffin.cpp" />
+    <ClCompile Include="SmithWaterman.cpp" />
+    <ClCompile Include="SmithWatermanAffin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+if errorlevel 1 goto VCEnd
+.\Qt\5.12.1\msvc2017_64\bin\uic.exe mainwindow.ui -o ui_mainwindow.h
+if errorlevel 1 goto VCEnd
+endlocal</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC mainwindow.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_mainwindow.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mainwindow.ui;%(AdditionalInputs)</AdditionalInputs>
+      <SubType>Designer</SubType>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
