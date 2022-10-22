@@ -6,7 +6,7 @@ Hochschule Pforzheim
 Datei:				Dotplot.cpp
 Autoren:			Sascha Seifert, Max Barchet, Sophie Reimschüssel
 Student:			Robin Hill
-Letzte Änderung:	16.10.2022
+Letzte Änderung:	22.10.2022
 Beschreibung:		Klasse zur Erstellung einer Matrix mit einem "Dotplot"
 ******************************************************************************/
 
@@ -63,7 +63,7 @@ Matrix<char> Dotplot::Perform(std::string seqA, std::string seqB)
 				// Top & Left
 				if ((i == 0 && j < lastCol) || j == 0 && i < lastRow) {
 
-					if (Dat != D.At(i + 1, j + 1)) {
+					if (notDat == D.At(i + 1, j + 1)) {
 						D.SetValue(i, j, downgrade);
 						continue;
 					}
@@ -71,7 +71,7 @@ Matrix<char> Dotplot::Perform(std::string seqA, std::string seqB)
 				// Right & Bottom 
 				if (i == lastRow || (j == lastCol) && (i && j)) {
 
-					if (Dat != D.At(i - 1, j - 1)) {
+					if (notDat == D.At(i - 1, j - 1)) {
 						D.SetValue(i, j, downgrade);
 						continue;
 					}
