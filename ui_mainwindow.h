@@ -33,6 +33,12 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButtonSequenceA;
+    QLabel *labelHeaderA;
+    QLabel *labelSequenceA;
+    QHBoxLayout *horizontalLayout_4;
     QVBoxLayout *verticalLayout_6;
     QRadioButton *radioButtonNW;
     QRadioButton *radioButtonNWAffin;
@@ -43,11 +49,6 @@ public:
     QPushButton *pushButtonSequenceB;
     QLabel *labelHeaderB;
     QLabel *labelSequenceB;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButtonSequenceA;
-    QLabel *labelHeaderA;
-    QLabel *labelSequenceA;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_7;
     QLabel *label_2;
@@ -72,7 +73,6 @@ public:
     QWidget *TabDotplot;
     QPlainTextEdit *plainTextEditDotplot;
     QPushButton *pushButtonDotplot;
-    QHBoxLayout *horizontalLayout_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -81,13 +81,57 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(845, 599);
+        MainWindow->resize(1358, 663);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(3);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        pushButtonSequenceA = new QPushButton(centralWidget);
+        pushButtonSequenceA->setObjectName(QString::fromUtf8("pushButtonSequenceA"));
+        pushButtonSequenceA->setMaximumSize(QSize(80, 16777215));
+
+        horizontalLayout_2->addWidget(pushButtonSequenceA);
+
+        labelHeaderA = new QLabel(centralWidget);
+        labelHeaderA->setObjectName(QString::fromUtf8("labelHeaderA"));
+        labelHeaderA->setMinimumSize(QSize(100, 20));
+
+        horizontalLayout_2->addWidget(labelHeaderA);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        labelSequenceA = new QLabel(centralWidget);
+        labelSequenceA->setObjectName(QString::fromUtf8("labelSequenceA"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelSequenceA->sizePolicy().hasHeightForWidth());
+        labelSequenceA->setSizePolicy(sizePolicy);
+        labelSequenceA->setMaximumSize(QSize(800, 16777215));
+        labelSequenceA->setTextFormat(Qt::RichText);
+        labelSequenceA->setScaledContents(false);
+        labelSequenceA->setWordWrap(true);
+
+        verticalLayout->addWidget(labelSequenceA);
+
+
+        gridLayout->addLayout(verticalLayout, 1, 0, 1, 2);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+
+        gridLayout->addLayout(horizontalLayout_4, 3, 0, 1, 2);
+
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
@@ -138,9 +182,6 @@ public:
 
         labelSequenceB = new QLabel(centralWidget);
         labelSequenceB->setObjectName(QString::fromUtf8("labelSequenceB"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(labelSequenceB->sizePolicy().hasHeightForWidth());
         labelSequenceB->setSizePolicy(sizePolicy);
         labelSequenceB->setMaximumSize(QSize(800, 16777215));
@@ -152,41 +193,6 @@ public:
 
 
         gridLayout->addLayout(verticalLayout_2, 2, 0, 1, 2);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(3);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        pushButtonSequenceA = new QPushButton(centralWidget);
-        pushButtonSequenceA->setObjectName(QString::fromUtf8("pushButtonSequenceA"));
-        pushButtonSequenceA->setMaximumSize(QSize(80, 16777215));
-
-        horizontalLayout_2->addWidget(pushButtonSequenceA);
-
-        labelHeaderA = new QLabel(centralWidget);
-        labelHeaderA->setObjectName(QString::fromUtf8("labelHeaderA"));
-        labelHeaderA->setMinimumSize(QSize(100, 20));
-
-        horizontalLayout_2->addWidget(labelHeaderA);
-
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
-        labelSequenceA = new QLabel(centralWidget);
-        labelSequenceA->setObjectName(QString::fromUtf8("labelSequenceA"));
-        sizePolicy.setHeightForWidth(labelSequenceA->sizePolicy().hasHeightForWidth());
-        labelSequenceA->setSizePolicy(sizePolicy);
-        labelSequenceA->setMaximumSize(QSize(800, 16777215));
-        labelSequenceA->setTextFormat(Qt::RichText);
-        labelSequenceA->setScaledContents(false);
-        labelSequenceA->setWordWrap(true);
-
-        verticalLayout->addWidget(labelSequenceA);
-
-
-        gridLayout->addLayout(verticalLayout, 1, 0, 1, 2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
@@ -309,27 +315,21 @@ public:
         TabDotplot->setObjectName(QString::fromUtf8("TabDotplot"));
         plainTextEditDotplot = new QPlainTextEdit(TabDotplot);
         plainTextEditDotplot->setObjectName(QString::fromUtf8("plainTextEditDotplot"));
-        plainTextEditDotplot->setGeometry(QRect(10, 40, 801, 161));
+        plainTextEditDotplot->setGeometry(QRect(10, 20, 1571, 301));
         plainTextEditDotplot->setFont(font);
         pushButtonDotplot = new QPushButton(TabDotplot);
         pushButtonDotplot->setObjectName(QString::fromUtf8("pushButtonDotplot"));
-        pushButtonDotplot->setGeometry(QRect(10, 10, 251, 23));
+        pushButtonDotplot->setGeometry(QRect(10, 0, 251, 23));
         pushButtonDotplot->setMinimumSize(QSize(251, 23));
         pushButtonDotplot->setMaximumSize(QSize(251, 16777215));
         Tabs->addTab(TabDotplot, QString());
 
         gridLayout->addWidget(Tabs, 5, 0, 1, 2);
 
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-
-        gridLayout->addLayout(horizontalLayout_4, 3, 0, 1, 2);
-
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 845, 21));
+        menuBar->setGeometry(QRect(0, 0, 1358, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -340,7 +340,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        Tabs->setCurrentIndex(0);
+        Tabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -349,6 +349,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Bioinformatics", nullptr));
+        pushButtonSequenceA->setText(QApplication::translate("MainWindow", "Sequence A", nullptr));
+        labelHeaderA->setText(QString());
+        labelSequenceA->setText(QString());
         radioButtonNW->setText(QApplication::translate("MainWindow", "Needleman-Wunsch linear", nullptr));
         radioButtonNWAffin->setText(QApplication::translate("MainWindow", "Needleman-Wunsch affin", nullptr));
         radioButtonSW->setText(QApplication::translate("MainWindow", "Smith-Waterman linear", nullptr));
@@ -356,9 +359,6 @@ public:
         pushButtonSequenceB->setText(QApplication::translate("MainWindow", "Sequence B", nullptr));
         labelHeaderB->setText(QString());
         labelSequenceB->setText(QString());
-        pushButtonSequenceA->setText(QApplication::translate("MainWindow", "Sequence A", nullptr));
-        labelHeaderA->setText(QString());
-        labelSequenceA->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "match", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "mismatch", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "gapPenalty", nullptr));

@@ -25,12 +25,9 @@ NeedlemanWunschAffin::NeedlemanWunschAffin(std::string seqA, std::string seqB)
 }
 
 int NeedlemanWunschAffin::Score(char a, char b) const {
-	if (a == b) {
-		return match;
-	}
-	else {
-		return mismatch;
-	}
+
+	if (a == b) return match;
+	else return mismatch;
 }
 
 void NeedlemanWunschAffin::FillMats() {
@@ -71,8 +68,8 @@ void NeedlemanWunschAffin::FillMats() {
 				up = F.At(i - 1, j) + gapExtensionPenalty;
 			}
 			
-			if (Z.At(i, j - 1) == 'D' && j < lastCol) {
-				left = F.At(i, j + 1) + gapPenalty;
+			if (Z.At(i, j - 1) == 'D') {
+				left = F.At(i, j - 1) + gapPenalty;
 			}
 			else {
 				left = F.At(i, j - 1) + gapExtensionPenalty;
@@ -118,10 +115,6 @@ void NeedlemanWunschAffin::Traceback() {
 			resultB.insert(resultB.begin(), sequenceB[i - 1]);
 			i--; 
 		}
-		/*
-		reverse(resultA.begin(), resultA.end());
-		reverse(resultB.begin(), resultB.end());
-		*/
 	}
 }
 

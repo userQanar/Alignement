@@ -21,6 +21,9 @@ class NeedlemanWunsch : public BaseAlignment
 public:
 	NeedlemanWunsch(std::string seqA, std::string seqB);
 	AlignedData PerformAlignment(int const& match, int const& mismatch, int const& gapPenalty, int const& gapExtensionPenalty) override;
+	int  Score(char a, char b) const;
+	void FillMats();
+	void Traceback();
 
 private:
 	

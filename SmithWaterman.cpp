@@ -24,7 +24,7 @@ SmithWaterman::SmithWaterman(std::string seqA, std::string seqB)
 	Z.SetSize(sequenceB.size() + 1, sequenceA.size() + 1);
 }
 
-int SmithWaterman::Score(char a, char b) {
+int SmithWaterman::Score(char a, char b) const{
 
 	if (a == '-' || b == '-') return gapPenalty;
 	if (a == b) return match;
@@ -33,7 +33,7 @@ int SmithWaterman::Score(char a, char b) {
 
 int SmithWaterman::max(int up, int diag, int left) {
 
-	if (up >= diag) { // >=
+	if (up > diag) { // >=
 		if (up >= left) return up;
 		else return left;
 	}
@@ -45,7 +45,7 @@ int SmithWaterman::max(int up, int diag, int left) {
 
 int SmithWaterman::charMax(int up, int diag, int left) {
 
-	if (up >= diag) { // >=
+	if (up > diag) { // >=
 		if (up >= left) return 'U';
 		else return 'L';
 	}
@@ -66,7 +66,7 @@ void SmithWaterman::FillMats() {
 	for (unsigned int i = 1; i < F.GetNumRows(); i++) {
 		for (unsigned j = 1; j < F.GetNumCols(); j++) {
 
-			int up = F.At(i - 1, j)		  + Score(sequenceB[i], '-');
+			int up = F.At  (i - 1, j)	  + Score(sequenceB[i], '-');
 			int diag = F.At(i - 1, j - 1) + Score(sequenceB[i - 1], sequenceA[j - 1]);
 			int left = F.At(i, j - 1)	  + Score('-', sequenceA[j]);
 
@@ -124,6 +124,5 @@ AlignedData SmithWaterman::PerformAlignment(int const& match, int const& mismatc
 	this->gapExtensionPenalty = gapExtensionPenalty;
 	FillMats();
 	Traceback();
-
 	return AlignedData{ F, Z, resultA, resultB };
 }
