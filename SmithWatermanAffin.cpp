@@ -5,7 +5,8 @@ Hochschule Pforzheim
 *******************************************************************************
 Datei:				SmithWatermanAffin.cpp
 Autoren:			Sascha Seifert, Max Barchet, Joachim Storz
-Letzte Änderung:	24.09.2021
+Student:			Robin Hill
+Letzte Änderung:	30.10.2022
 Beschreibung:		Klasse zur Berechnung eines optimalen lokalen Alignments
 					mit dem Smith-Waterman-Algorithmus (affine Gap Penalty)
 ******************************************************************************/

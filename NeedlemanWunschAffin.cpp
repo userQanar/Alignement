@@ -5,7 +5,8 @@ Hochschule Pforzheim
 *******************************************************************************
 Datei:				NeedlemanWunschAffin.cpp
 Autoren:			Sascha Seifert, Max Barchet, Joachim Storz
-Letzte Änderung:	24.09.2021
+Student:			Robin Hill
+Letzte Änderung:	30.10.2022
 Beschreibung:		Klasse zur Berechnung eines optimalen globalen Alignments
 					mit dem Needleman-Wunsch-Algorithmus (affine Gap Penalty)
 ******************************************************************************/

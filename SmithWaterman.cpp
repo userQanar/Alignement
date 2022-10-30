@@ -5,7 +5,8 @@ Hochschule Pforzheim
 *******************************************************************************
 Datei:				SmithWaterman.cpp
 Autoren:			Sascha Seifert, Max Barchet, Joachim Storz
-Letzte Änderung:	24.09.2021
+Student:			Robin Hill
+Letzte Änderung:	30.10.2022
 Beschreibung:		Klasse zur Berechnung eines optimalen lokalen Alignments
 					mit dem Smith-Waterman-Algorithmus (lineare Gap Penalty)
 ******************************************************************************/
@@ -26,7 +27,6 @@ SmithWaterman::SmithWaterman(std::string seqA, std::string seqB)
 
 int SmithWaterman::Score(char a, char b) const{
 
-	if (a == '-' || b == '-') return gapPenalty;
 	if (a == b) return match;
 	else return mismatch;
 }
@@ -66,9 +66,10 @@ void SmithWaterman::FillMats() {
 	for (unsigned int i = 1; i < F.GetNumRows(); i++) {
 		for (unsigned j = 1; j < F.GetNumCols(); j++) {
 
-			int up = F.At  (i - 1, j)	  + Score(sequenceB[i], '-');
 			int diag = F.At(i - 1, j - 1) + Score(sequenceB[i - 1], sequenceA[j - 1]);
-			int left = F.At(i, j - 1)	  + Score('-', sequenceA[j]);
+
+			int up = F.At  (i - 1, j) + gapPenalty;
+			int left = F.At(i, j - 1) + gapPenalty;
 
 			F.SetValue(i, j, checkNegative(up, diag, left));
 
@@ -87,14 +88,6 @@ void SmithWaterman::FillMats() {
 }
 
 void SmithWaterman::Traceback() {
-
-	Z.SetValue(0, 0, '0');
-	for (unsigned i = 1; i < Z.GetNumRows(); i++) {
-		Z.SetValue(i, 0, '0');
-	}
-	for (unsigned j = 1; j < Z.GetNumCols(); j++) {
-		Z.SetValue(0, j, '0');
-	}
 
 	while (F.At(iMax, jMax) > 0) {
 
