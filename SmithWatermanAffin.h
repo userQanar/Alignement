@@ -22,6 +22,15 @@ public:
 	SmithWatermanAffin(std::string seqA, std::string seqB);
 	AlignedData PerformAlignment(int const& match, int const& mismatch, int const& gapPenalty, int const& gapExtensionPenalty) override;
 
+	int  Score(char a, char b) const;
+	int  checkNegative(int u, int d, int l);
+	int  max(int up, int diag, int left);
+	int  charMax(int up, int diag, int left);
+	void FillMats();
+	void Traceback();
+
+	int iMax = 0; int jMax = 0; int maxVal = 0;
+
 private:
 	
 };
